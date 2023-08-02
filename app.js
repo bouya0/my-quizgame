@@ -11,12 +11,12 @@ const correct = "醤油ラーメン";
 document.getElementById("js-question").textContent = question;
 
 const $button = document.getElementsByTagName("button");
+const buttonLength = $button.length;
 
 //クイズの問題
 const setupQuiz = () => {
   let buttonIndex = 0;
-  let buttonlength = $button.length;
-  while (buttonIndex < buttonlength) {
+  while (buttonIndex < buttonLength) {
     $button[buttonIndex].textContent = answers[buttonIndex];
     buttonIndex++;
   }
@@ -32,15 +32,10 @@ const clickHandler = (e) => {
 };
 
 //ボタンをクリックしたら正誤判定
-$button[0].addEventListener("click", (e) => {
-  clickHandler(e);
-});
-$button[1].addEventListener("click", (e) => {
-  clickHandler(e);
-});
-$button[2].addEventListener("click", (e) => {
-  clickHandler(e);
-});
-$button[3].addEventListener("click", (e) => {
-  clickHandler(e);
-});
+let handlerIndex = 0;
+while (handlerIndex < buttonLength) {
+  $button[handlerIndex].addEventListener("click", (e) => {
+    clickHandler(e);
+  });
+  handlerIndex++;
+}
