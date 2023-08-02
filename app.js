@@ -1,5 +1,10 @@
 const quiz = [
   {
+    question: "ラーメンの発祥とされる地域は次の内どこ？",
+    answers: ["日本", "中国", "韓国", "台湾"],
+    correct: "中国",
+  },
+  {
     question:
       "ラーメンに関する調査の結果、最も人気のあったラーメンの種類は次のうちどれ？",
     answers: ["味噌ラーメン", "醤油ラーメン", "塩ラーメン", "とんこつラーメン"],
@@ -9,11 +14,6 @@ const quiz = [
     question: "福岡県で主に見られるラーメンのスタイルは次のうちどれ？",
     answers: ["味噌ラーメン", "醤油ラーメン", "塩ラーメン", "とんこつラーメン"],
     correct: "とんこつラーメン",
-  },
-  {
-    question: "ラーメンの発祥とされる地域は次の内どこ？",
-    answers: ["中国", "日本", "韓国", "台湾"],
-    correct: "中国",
   },
   {
     question: "つけ麺はどのラーメンショップが発祥とされているでしょうか？",
@@ -29,6 +29,7 @@ const quiz = [
 
 const quizLength = quiz.length;
 let quizIndex = 0;
+let score = 0;
 
 const $button = document.getElementsByTagName("button");
 const buttonLength = $button.length;
@@ -49,6 +50,7 @@ setupQuiz();
 const clickHandler = (e) => {
   if (quiz[quizIndex].correct === e.target.textContent) {
     window.alert("正解！");
+    score++;
   } else {
     window.alert("不正解！");
   }
@@ -60,7 +62,9 @@ const clickHandler = (e) => {
     setupQuiz();
   } else {
     //問題数がもうなければこちらを実行
-    window.alert("終了！");
+    window.alert(
+      "終了！あなたの正解数は" + score + "/" + quizLength + "です！"
+    );
   }
 };
 
