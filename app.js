@@ -18,10 +18,10 @@ const quiz = [
   {
     question: "つけ麺はどのラーメン店が発祥とされているでしょうか？",
     answers: [
-      "新宿の「武蔵」",
+      "新宿の「麺屋武蔵」",
       "中野の「大勝軒」",
-      "浅草の「六厘舎」",
-      "池袋の「一蘭」",
+      "千駄木の「TETSU」",
+      "大崎の「六厘舎」",
     ],
     correct: "中野の「大勝軒」",
   },
@@ -41,6 +41,10 @@ const backgrounds = [
   "background4",
 ];
 const backgroundLength = backgrounds.length;
+
+// 問題ごとに画像を変えるためのクラスの配列
+const jsimages = ["js-image1", "js-image2", "js-image3", "js-image4"];
+const imagesLength = jsimages.length;
 
 //クイズの問題文、選択肢を定義
 const setupQuiz = () => {
@@ -75,6 +79,17 @@ const setupQuiz = () => {
     $button[buttonIndex].classList.add(newClass);
     buttonIndex++;
   }
+
+  //画像の削除
+  for (imageIndex = 0; imageIndex < imagesLength; imageIndex++) {
+    let imageContainer = document.getElementById(jsimages[imageIndex]);
+    imageContainer.style.display = "none";
+  }
+  //新しい画像の追加
+  let currentJsImage = jsimages[quizIndex % imagesLength];
+  let currentImageContainer = document.getElementById(currentJsImage);
+  currentImageContainer.style.display = "block";
+  imageIndex++;
 };
 setupQuiz();
 
