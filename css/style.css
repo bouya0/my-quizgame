@@ -34,7 +34,7 @@ body {
 }
 
 /* img */
-.container {
+.img-container {
   position: relative;
   width: 100%;
   height: 100vh; /* or set it to the height you prefer */
