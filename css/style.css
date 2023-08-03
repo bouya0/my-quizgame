@@ -106,3 +106,13 @@ body {
   height: auto;
   transform: rotate(-10deg);
 }
+
+@media only screen and (max-width: 600px) {
+  /* ボタンのサイズを調整 */
+  .btn {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+
+  
+}
