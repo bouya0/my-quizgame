@@ -1,3 +1,8 @@
+body {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: bold;
+}
+
 .background1 {
   background-color: lightblue;
 }
@@ -15,11 +20,12 @@
 }
 
 .mt-3 {
-  color: #111;
+  color: #052c65;
 }
 .btn {
-  color: #111;
+  color: #052c65;
   border: none;
+  font-weight: bold;
 }
 
 .btn:hover {
