@@ -1,0 +1,27 @@
+.background1 {
+  background-color: lightblue;
+}
+
+.background2 {
+  background-color: lightgreen;
+}
+
+.background3 {
+  background-color: lightyellow;
+}
+
+.background4 {
+  background-color: lightpink;
+}
+
+.mt-3 {
+  color: #111;
+}
+.btn {
+  color: #111;
+  border: none;
+}
+
+.btn:hover {
+  opacity: 0.7;
+}

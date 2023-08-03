@@ -33,14 +33,46 @@ let score = 0;
 
 const $button = document.getElementsByTagName("button");
 const buttonLength = $button.length;
+// 問題の背景色を変えるためのクラス名の配列
+const backgrounds = [
+  "background1",
+  "background2",
+  "background3",
+  "background4",
+];
+const backgroundLength = backgrounds.length;
 
 //クイズの問題文、選択肢を定義
 const setupQuiz = () => {
-  //quiz[インデックス].キー名（連想配列なので）で呼び出す。
-  document.getElementById("js-question").textContent = quiz[quizIndex].question;
+  const jsquestion = document.getElementById("js-question");
+
+  //背景色のクラスの削除
+  for (
+    let backgroundIndex = 0;
+    backgroundIndex < backgroundLength;
+    backgroundIndex++
+  ) {
+    jsquestion.classList.remove(backgrounds[backgroundIndex]);
+  }
+  //新しい背景色のクラスの追加
+  let newClass = backgrounds[quizIndex % backgroundLength];
+  //add(newClass)でクラスを生成
+  jsquestion.classList.add(newClass);
+
+  //問題文と選択肢の設定
+  jsquestion.textContent = quiz[quizIndex].question;
   let buttonIndex = 0;
   while (buttonIndex < buttonLength) {
     $button[buttonIndex].textContent = quiz[quizIndex].answers[buttonIndex];
+
+    for (
+      let backgroundIndex = 0;
+      backgroundIndex < backgroundLength;
+      backgroundIndex++
+    ) {
+      $button[buttonIndex].classList.remove(backgrounds[backgroundIndex]);
+    }
+    $button[buttonIndex].classList.add(newClass);
     buttonIndex++;
   }
 };
