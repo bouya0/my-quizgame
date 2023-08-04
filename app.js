@@ -1,3 +1,6 @@
+const numbers = ["Question1/4", "Question2/4", "Question3/4", "Question4/4"];
+const numberLength = numbers.length;
+
 const quiz = [
   {
     question: "ラーメンの発祥とされる地域は次のうちどこ？",
@@ -48,7 +51,12 @@ const imagesLength = jsImages.length;
 
 //クイズの問題文、選択肢を定義
 const setupQuiz = () => {
+  const jsNumber = document.getElementById("js-number");
   const jsQuestion = document.getElementById("js-question");
+
+  for (let numberIndex = 0; numberIndex < numberLength; numberIndex++) {
+    jsNumber.textContent = numbers[quizIndex % numberLength];
+  }
 
   //背景色のクラスの削除
   for (
