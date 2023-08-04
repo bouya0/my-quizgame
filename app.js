@@ -1,6 +1,6 @@
 const quiz = [
   {
-    question: "ラーメンの発祥とされる地域は次の内どこ？",
+    question: "ラーメンの発祥とされる地域は次のうちどこ？",
     answers: ["日本", "中国", "韓国", "台湾"],
     correct: "中国",
   },
@@ -16,7 +16,7 @@ const quiz = [
     correct: "とんこつラーメン",
   },
   {
-    question: "つけ麺はどのラーメン店が発祥とされているでしょうか？",
+    question: "つけ麺は次のうちどのラーメン店が発祥とされているでしょうか？",
     answers: [
       "新宿の「麺屋武蔵」",
       "中野の「大勝軒」",
@@ -42,13 +42,13 @@ const backgrounds = [
 ];
 const backgroundLength = backgrounds.length;
 
-// 問題ごとに画像を変えるためのクラスの配列
-const jsimages = ["js-image1", "js-image2", "js-image3", "js-image4"];
-const imagesLength = jsimages.length;
+// 問題ごとに画像を変えるためのidの配列
+const jsImages = ["js-image1", "js-image2", "js-image3", "js-image4"];
+const imagesLength = jsImages.length;
 
 //クイズの問題文、選択肢を定義
 const setupQuiz = () => {
-  const jsquestion = document.getElementById("js-question");
+  const jsQuestion = document.getElementById("js-question");
 
   //背景色のクラスの削除
   for (
@@ -56,19 +56,19 @@ const setupQuiz = () => {
     backgroundIndex < backgroundLength;
     backgroundIndex++
   ) {
-    jsquestion.classList.remove(backgrounds[backgroundIndex]);
+    jsQuestion.classList.remove(backgrounds[backgroundIndex]);
   }
-  //新しい背景色のクラスの追加
+  //新しい背景色のクラスの生成
   let newClass = backgrounds[quizIndex % backgroundLength];
-  //add(newClass)でクラスを生成
-  jsquestion.classList.add(newClass);
+  //add(newClass)でクラスを追加
+  jsQuestion.classList.add(newClass);
 
   //問題文と選択肢の設定
-  jsquestion.textContent = quiz[quizIndex].question;
+  jsQuestion.textContent = quiz[quizIndex].question; //quizの⚪︎番目のオブジェクトのquestionキーを指定
   let buttonIndex = 0;
   while (buttonIndex < buttonLength) {
     $button[buttonIndex].textContent = quiz[quizIndex].answers[buttonIndex];
-
+    //buttonの背景色の削除
     for (
       let backgroundIndex = 0;
       backgroundIndex < backgroundLength;
@@ -76,19 +76,20 @@ const setupQuiz = () => {
     ) {
       $button[buttonIndex].classList.remove(backgrounds[backgroundIndex]);
     }
+    // 新しい背景色のクラスの作成
     $button[buttonIndex].classList.add(newClass);
     buttonIndex++;
   }
 
   //画像の削除
   for (imageIndex = 0; imageIndex < imagesLength; imageIndex++) {
-    let imageContainer = document.getElementById(jsimages[imageIndex]);
+    let imageContainer = document.getElementById(jsImages[imageIndex]);
     imageContainer.style.display = "none";
   }
   //新しい画像の追加
-  let currentJsImage = jsimages[quizIndex % imagesLength];
+  let currentJsImage = jsImages[quizIndex % imagesLength];
   let currentImageContainer = document.getElementById(currentJsImage);
-  currentImageContainer.style.display = "block";
+  currentImageContainer.style.display = "flex";
   imageIndex++;
 };
 setupQuiz();

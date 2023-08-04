@@ -1,6 +1,14 @@
 body {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-weight: bold;
+  font-family: "Franklin Gothic Medium", sans-serif;
+}
+.container {
+  width: 100%;
+  background-color: #eee;
+  padding: 80px 30px;
+}
+
+/* questionNumber */
+.questionNumber {
 }
 
 .background1 {
@@ -22,6 +30,7 @@ body {
 .mt-3 {
   color: #052c65;
   border: 1px solid #111;
+  font-weight: bold;
 }
 .btn {
   color: #052c65;
@@ -35,76 +44,22 @@ body {
 
 /* img */
 .img-container {
-  position: relative;
   width: 100%;
-  height: 100vh; /* or set it to the height you prefer */
+  height: 100%;
+  justify-content: space-between;
 }
 
-.china {
-  position: absolute;
-  top: 176px;
-  left: 48px;
-  width: 35%;
-  height: auto;
-  transform: rotate(10deg);
-}
-.ishiki {
-  position: absolute;
-  bottom: 32px;
-  right: 48px;
-  width: 30%;
-  height: auto;
-  transform: rotate(-10deg);
-}
-.syouyu {
-  position: absolute;
-  top: 270px;
-  left: 48px;
-  width: 35%;
-  height: auto;
-  transform: rotate(10deg);
-}
-.yatai {
-  position: absolute;
-  bottom: 180px;
-  right: 48px;
-  width: 40%;
-  height: auto;
-  transform: rotate(-10deg);
-}
-.pig {
-  position: absolute;
-  bottom: 32px;
-  left: 48px;
-  width: 40%;
-  height: auto;
-  transform: rotate(10deg);
-}
-.tonkotsu {
-  position: absolute;
-  top: 200px;
-  right: 48px;
-  width: 40%;
-  height: auto;
-  transform: rotate(-10deg);
-}
-
-.tsukemen {
-  position: absolute;
-  top: 240px;
-  left: 64px;
-  width: 40%;
-  height: auto;
-  transform: rotate(10deg);
-}
-
+.china,
+.ishiki,
+.syouyu,
+.yatai,
+.pig,
+.tonkotsu,
+.tsukemen,
 .ramen-woman {
-  position: absolute;
-  bottom: 196px;
-  right: 96px;
   width: 30%;
   height: auto;
-  transform: rotate(-10deg);
+  transform: rotate(10deg);
 }
 
 @media only screen and (max-width: 600px) {
@@ -113,6 +68,4 @@ body {
     font-size: 12px;
     padding: 5px 10px;
   }
-
-  
 }
