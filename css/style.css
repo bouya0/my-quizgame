@@ -6,6 +6,10 @@ a {
   text-decoration: none;
 }
 
+.title {
+  text-align: center;
+}
+
 .container {
   width: 80%;
   background-color: #eee;
@@ -55,6 +59,7 @@ a {
   width: 100%;
   height: 100%;
   justify-content: space-between;
+  margin-top: 40px;
 }
 
 .china,
@@ -100,5 +105,13 @@ a {
   .btn {
     font-size: 12px;
     padding: 5px 10px;
+  }
+
+  .container {
+    width: 95%;
+    background-color: #eee;
+    padding: 56px 30px;
+    margin: 16px auto;
+    border-radius: 2%;
   }
 }
