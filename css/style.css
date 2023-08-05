@@ -51,16 +51,21 @@ body {
 }
 
 .china,
-.ishiki,
 .syouyu,
-.yatai,
 .pig,
-.tonkotsu,
-.tsukemen,
-.ramen-woman {
+.tsukemen {
   width: 30%;
   height: auto;
   transform: rotate(10deg);
+}
+
+.ishiki,
+.yatai,
+.tonkotsu,s
+.ramen-woman {
+  width: 30%;
+  height: auto;
+  transform: rotate(-10deg);
 }
 
 @media only screen and (max-width: 600px) {
