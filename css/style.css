@@ -2,10 +2,14 @@ body {
   font-family: "Franklin Gothic Medium", sans-serif;
 }
 
+a {
+  text-decoration: none;
+}
+
 .container {
-  width: 100%;
+  width: 80%;
   background-color: #eee;
-  padding: 80px 30px;
+  padding: 64px 30px;
   margin: 16px auto;
   border-radius: 2%;
 }
@@ -69,6 +73,26 @@ body {
   width: 30%;
   height: auto;
   transform: rotate(-10deg);
+}
+
+.play-again {
+  text-align: center;
+  margin-top: 32px;
+  display: none;
+}
+
+.play-again > a {
+  font-size: 24px;
+  padding: 8px 16px;
+  color: #fff;
+  background-color: #aaa;
+  border: 1px solid #fff;
+  border-radius: 8px;
+}
+
+.play-again > a:hover {
+  background-color: #0a58ca;
+  opacity: 0.7;
 }
 
 @media only screen and (max-width: 600px) {
