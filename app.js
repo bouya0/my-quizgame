@@ -49,6 +49,8 @@ const backgroundLength = backgrounds.length;
 const jsImages = ["js-image1", "js-image2", "js-image3", "js-image4"];
 const imagesLength = jsImages.length;
 
+const 
+
 //クイズの問題文、選択肢を定義
 const setupQuiz = () => {
   const jsNumber = document.getElementById("js-number");
