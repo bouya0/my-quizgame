@@ -49,7 +49,10 @@ const backgroundLength = backgrounds.length;
 const jsImages = ["js-image1", "js-image2", "js-image3", "js-image4"];
 const imagesLength = jsImages.length;
 
-const 
+//Audioオブジェクトを作成
+const clickCorrectBgm = new Audio("bgm.png/Quiz-Correct_Answer02-1.mp3");
+const clickBuzzerBgm = new Audio("bgm.png/Quiz-Wrong_Buzzer02-1.mp3");
+const ResultsBgm = new Audio("bgm.png/Quiz-Results01-1.mp3");
 
 //クイズの問題文、選択肢を定義
 const setupQuiz = () => {
@@ -107,9 +110,13 @@ setupQuiz();
 //クリックした時の動きを関数にまとめる
 const clickHandler = (e) => {
   if (quiz[quizIndex].correct === e.target.textContent) {
+    clickCorrectBgm.currentTime = 0;
+    clickCorrectBgm.play();
     window.alert("正解！");
     score++;
   } else {
+    clickBuzzerBgm.currentTime = 0;
+    clickBuzzerBgm.play();
     window.alert("不正解！");
   }
 
@@ -120,6 +127,7 @@ const clickHandler = (e) => {
     setupQuiz();
   } else {
     //問題数がもうなければこちらを実行
+    ResultsBgm.play();
     window.alert(
       "終了！あなたの正解数は" + score + "/" + quizLength + "です！"
     );
