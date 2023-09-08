@@ -49,7 +49,7 @@ const backgroundLength = backgrounds.length;
 const jsImages = ["js-image1", "js-image2", "js-image3", "js-image4"];
 const imagesLength = jsImages.length;
 
-//Audioオブジェクトを作成
+//クリックした時に流す用のAudioオブジェクトを作成
 const clickCorrectBgm = new Audio("bgm.png/Quiz-Correct_Answer02-1.mp3");
 const clickBuzzerBgm = new Audio("bgm.png/Quiz-Wrong_Buzzer02-1.mp3");
 const ResultsBgm = new Audio("bgm.png/Quiz-Results01-1.mp3");
